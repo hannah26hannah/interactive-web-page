@@ -1,0 +1,77 @@
+\html {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+	margin: 0;
+}
+div, section, header, footer, p, h1, h2 {
+	box-sizing: border-box;
+}
+a {
+	color: royalblue;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.global-footer {
+	padding: 2rem 0;
+	text-align: center;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+.scene-img {
+	max-height: 100vh;
+	/* view port size 맞게 조정이 된다. */
+}
+.global-width {
+	max-width: 520px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.scroll-graphic {
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	
+}
+.scroll-text {
+	position: relative;
+	padding-bottom: 1px;
+	left: 150px;
+}
+
+.step {
+	padding: 0.5rem 1rem;
+	margin-bottom: 50vh;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+
+.graphic-item {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+}
+.borderline {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 290px;
+	height: 35px;
+	background: lightgoldenrodyellow;
+	transition: 1.5s 0.5s linear;
+
+}
+.visible {
+	opacity: 1;
+}
