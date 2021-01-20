@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Sample : Move Google Logo</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    let initial = false;
+    let myCanvas;
+    let Context;
+
+    let posX;
+    let posY;
+    let moveCount = 0;
+
+    let image = new Image()
+
+    // 초기화
+    function init() {
+        if (initial == false) {
+            myCanvas = document.getElementById("MyCanvas");
+            Context = myCanvas.getContext("2d");
+            image.src = "https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+            
+            // 해당 이미지를 처음에 표시할 위치를 캔버스의 정가운데로 정의한다.
+            posX = myCanvas.width/2;
+            posY = myCanvas.height/2;
+            initial = true
+        }
+    }
+
+    // draw 이벤트
+    function onDraw() {
+        if (initial == false) return;
+        Context.strokeStyle = "#000";
+        Context.lineWith=1;
+        Context.strokeRect(0, 0, myCanvas.width - 1, myCanvas.height - 1);
+        Context.fillStyle = "#f8f8f8";
+        Context.fillRect(1, 1, myCanvas.width - 2, myCanvas.height - 2);
+        Context.drawImage(image, posX - image.width/2, posY - image.height/2);
+    }
+
+    function Run() {
+        if (moveCount < 100) posX += 2;
+        else if (moveCount < 300) posX -= 2;
+        else if (moveCount < 400) posX += 2;
+        else moveCount = 0;
+        moveCount++;
+
+        onDraw();
+    }
+
+    () => {
+        init();
+        setInterval(Run, 20);
+    }
+
+        // $(document).ready(function () {
+        //     init();
+        //     setInterval(Run, 20);
+        // });
+
+</script>
+<body>
+    <canvas id="MyCanvas" width=800 height=600>
+        Canvas is not supported
+    </canvas>
+</body>
+</html>
