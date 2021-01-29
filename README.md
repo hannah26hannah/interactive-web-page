@@ -21,14 +21,15 @@ dark mode example :
 <img src="/preview-image/darkmode.gif" width="70%" height="auto" title="darkmode preview" alt="dark mode preview"></img>
 
 Reference: [Tutorial](https://www.youtube.com/watch?v=bfaPnlYE8Jo)
-Offical Doc: [anime.js](https://animejs.com/)
+<br />Offical Doc: [anime.js](https://animejs.com/)
 
 ### Text Animation
 
 `hangeul_text`
-<img src="/preview-image/svg_text_anime.gif" width="70%" height="auto" title="darkmode preview" alt="dark mode preview"></img>
+
+<br /><img src="/preview-image/svg_text_anime.gif" width="70%" height="auto" title="darkmode preview" alt="dark mode preview"></img>
 `text_anime`
-<img src="/preview-image/svg_text_anime2.gif" width="70%" height="auto" title="darkmode preview" alt="dark mode preview"></img>
+<br /><img src="/preview-image/svg_text_anime2.gif" width="70%" height="auto" title="darkmode preview" alt="dark mode preview"></img>
 
 Reference: [Tutorial](https://www.youtube.com/watch?v=vJNVramny9k&t=918s)
-Published Blog Post : [[SVG] JavaScript, CSS를 활용한 Path 기반 텍스트 애니메이션](https://uiyoji-journal.tistory.com/57)
+<br />Published Blog Post : [[SVG] JavaScript, CSS를 활용한 Path 기반 텍스트 애니메이션](https://uiyoji-journal.tistory.com/57)
