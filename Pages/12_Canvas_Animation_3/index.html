@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Sample 2 : Snowy Effect on Canvas</title>
+    <title>Snowy Effect on Canvas</title>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
     // 기본 초기화
@@ -65,8 +64,7 @@ function Run(){
     }
     onDraw();
 }
-
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
     init();
     setInterval(Run, 20);
 })

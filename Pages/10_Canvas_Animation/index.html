@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Sample 3 : Bouncing Ball Effect on Canvas</title>
+    <title>Bouncing Ball Effect on Canvas</title>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
 // 초기화
@@ -93,11 +92,11 @@ function onDraw() {
     }
     Context.filter = "None";
 }
-
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', () => {
     Init();
     setInterval(Run, 20);
 })
+
 </script>
 <canvas id="MyCanvas" width=800 height="600">Canvas is not supported yet</canvas>
 </body>
