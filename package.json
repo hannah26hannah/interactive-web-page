@@ -1,0 +1,23 @@
+{
+  "name": "interactive-web",
+  "version": "1.0.0",
+  "description": "Interactive Web Technology",
+  "main": "main.js",
+  "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannah26hannah/interactive-web-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannah26hannah/interactive-web-page/issues"
+  },
+  "homepage": "https://hannah26hannah.github.io/interactive-web-page/",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
