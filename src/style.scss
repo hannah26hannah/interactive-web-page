@@ -1,0 +1,232 @@
+$dark: #333333;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  background-image: linear-gradient(to right bottom, #53575c, #a6b2e4, #a69bdc, #af81cc, #bb62b3);
+}
+
+header {
+  height: 5rem;
+}
+.navigationContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #fff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 16rem;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 2rem;
+    color: $dark
+  }
+}
+
+.modalOpen {
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16rem;
+  overflow: auto;
+  overflow-y: hidden;
+
+  .item-title {
+    text-align: center;
+  }
+  
+  .openBtn {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+
+// custom scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a2a4a7; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bb62b3; 
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a6b2e4; 
+}
+
+.cardBox {
+  width: 344px;
+  border-radius: 4px;
+  margin: 3rem;
+  padding: 2rem;
+  background: #fff;
+  -webkit-box-shadow: 2px 9px 13px -4px rgba(109,109,109,0.89); 
+  box-shadow: 2px 9px 13px -4px rgba(109,109,109,0.89);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+// Routes 
+.routesContainer {
+  border-top: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: calc(100vh - 21rem);
+  section {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+}
+// text svg animation 1
+.svgWrapper {
+  height: 100%;
+  svg {
+    height: 100%
+  }
+}
+.svgWrapper1 {
+  .text-svg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .text-svg-logo,
+    #path-1-outside-1 {
+      animation: fill-out 1s ease-out forwards 2s;
+    }
+    /* nth-of-type()을 쓸 경우 
+    .text-svg-logo path:nth-of-type(1) {}
+    .text-svg-logo .myPath:nth-of-type(1) {}
+    */
+    /* nth-child()를 쓸 경우 
+    .text-svg-logo path:nth-child(2) {}
+    */
+    
+  .text-svg-logo path:nth-of-type(1) {
+    stroke-dasharray: 1375.16px;
+    stroke-dashoffset: 1375.16px;
+    animation: line-anime 5s ease-out forwards;
+  }
+  .text-svg-logo path:nth-of-type(2) {
+    stroke-dasharray: 1519.13px;
+    stroke-dashoffset: 1519.13px;
+    animation: line-anime 5s ease-out forwards;
+  }
+  .text-svg-logo path:nth-of-type(3) {
+    stroke-dasharray: 1375.16px;
+    stroke-dashoffset: 1375.16px;
+    animation: line-anime 5s ease-out forwards;
+  }
+  .text-svg-logo path:nth-of-type(4) {
+    stroke-dasharray: 1519.13px;
+    stroke-dashoffset: 1519.13px;
+    animation: line-anime 5s ease-out forwards;
+  }
+      
+  @keyframes line-anime {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fill-out {
+    from {
+      fill: transparent;
+    }
+    to {
+      fill: white;
+    }
+  }
+}
+
+
+// text svg animation 2
+.svgWrapper2 {
+  .text-svg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .text-svg-logo,
+  #path-1-outside-1 {
+    animation: fill-anim 1.5s ease forwards 2.5s;
+  }
+
+  .text-svg-logo .myPath:nth-of-type(1) {
+    stroke-dasharray: 2459.62px;
+    stroke-dashoffset: 2459.62px;
+    animation: line-anim 10s ease forwards;
+  }
+  .text-svg-logo .myPath:nth-of-type(2) {
+    stroke-dasharray: 2370.16px;
+    stroke-dashoffset: 2370.16px;
+    animation: line-anim 10s ease forwards;
+  }
+  .text-svg-logo .myPath:nth-of-type(3) {
+    stroke-dasharray: 3350.07px;
+    stroke-dashoffset: 3350.07px;
+    animation: line-anim 10s ease forwards;
+  }
+  .text-svg-logo .myPath:nth-of-type(4) {
+    stroke-dasharray: 2770.65px;
+    stroke-dashoffset: 2770.65px;
+    animation: line-anim 7.5s ease forwards;
+  }
+  @keyframes line-anim {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fill-anim {
+    /* from {
+      fill: transparent;
+    } */
+    to {
+      fill: white;
+    }
+  }
+}
