@@ -11,22 +11,22 @@ export default class Component {
     this.setEvent(); // constructor에서 한 번만 실행한다. 
     this.render();
   }
-  setup () {};
-  mounted () {};
-  template () { return ''; }
+  setup() { };
+  mounted() { };
+  template() { return ''; }
   render() {
     this.$target.innerHTML = this.template();
     this.mounted(); // render 후에 mounted가 실행된다. render 이후에 추가적인 기능을 수행하기 위해서이다.
   }
-  setEvent () {}
+  setEvent() { }
   setState(newState) {
-    this.$state = {...this.$state, ...newState};
+    this.$state = { ...this.$state, ...newState };
     this.render();
   }
 
   addEvent(eventType, selector, callback) {
     const children = [...this.$target.querySelectorAll(selector)];
-    // selector에 명시한 것보다 더 하위 요솨 선택되는 경우엔 closest를 이용해 처리한다.
+    // selector에 명시한 것보다 더 하위 요소가 선택되는 경우엔 closest를 이용해 처리한다.
     const isTarget = target => children.includes(target) || target.closest(selector);
 
     this.$target.addEventListener(eventType, event => {
