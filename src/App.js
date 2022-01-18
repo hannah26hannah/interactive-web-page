@@ -6,7 +6,7 @@ import Routes from './components/Routes';
 export default class App extends Component {
   setup() {
     this.$state = {
-      items : [
+      items: [
         {
           seq: 1,
           title: 'Text SVG Animation 1',
@@ -17,11 +17,16 @@ export default class App extends Component {
           title: 'Text SVG Animation 2',
           active: false
         },
+        {
+          seq: 3,
+          title: 'Pulsing Animation',
+          active: false
+        }
       ]
     }
   }
 
-  template () {
+  template() {
     return `
       <header data-component='appBar'></header>
       <main class='routesContainer' data-component='routes'></main>
@@ -36,9 +41,9 @@ export default class App extends Component {
     const $routes = this.$target.querySelector('[data-component="routes"]');
 
     new AppBar($appBar)
-    
+
     new Items($items, {
-      totalItems, 
+      totalItems,
       setPage: setPage.bind(this),
       toggleItem: toggleItem.bind(this)
     })
@@ -49,37 +54,37 @@ export default class App extends Component {
     })
   }
 
-  get totalItems () {
+  get totalItems() {
     const { items } = this.$state;
     return items.map(item => item)
   }
 
-  get activeItem () {
+  get activeItem() {
     const { items } = this.$state;
     return items.filter(({ active }) => active)
   }
 
-  setPage (seq) {
+  setPage(seq) {
     const pathName = `/${seq}`;
     window.history.pushState({}, pathName, window.location.origin + pathName)
   }
-  isMatchedItem (activeItem) {
+  isMatchedItem(activeItem) {
     const pathName = document.location.pathname
     const seqNum = pathName.split('/')[1]
-    return (activeItem.length > 0) && (activeItem.filter((item) => item.seq == seqNum).length > 0) 
+    return (activeItem.length > 0) && (activeItem.filter((item) => item.seq == seqNum).length > 0)
   }
 
-  toggleItem (seq) {
+  toggleItem(seq) {
     const items = [...this.$state.items];
     const index = items.findIndex(v => v.seq === seq)
     items.forEach(item => {
       item.active = false
     })
     items[index].active = !items[index].active;
-    this.setState({items})
+    this.setState({ items })
   }
 
- 
+
 }
 
 
