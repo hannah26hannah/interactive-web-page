@@ -2,7 +2,7 @@ import Component from "../core/Component.js";
 import NotFound from './NotFound';
 import TextSVGAnimation1 from '../pages/TextSVGAnimation1';
 import TextSVGAnimation2 from '../pages/TextSVGAnimation2';
-import Pulsing from '../pages/Pulsing';
+import Keyframes from "../pages/Keyframes.js";
 
 export default class Routes extends Component {
   template() {
@@ -22,7 +22,7 @@ export default class Routes extends Component {
           new TextSVGAnimation2($routesItem, {})
           break;
         case '3':
-          new Pulsing($routesItem, {})
+          new Keyframes($routesItem, {})
           break;
       }
 

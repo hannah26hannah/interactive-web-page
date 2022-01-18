@@ -19,7 +19,7 @@ export default class App extends Component {
         },
         {
           seq: 3,
-          title: 'Pulsing Animation',
+          title: 'Keyframes Animation',
           active: false
         }
       ]
